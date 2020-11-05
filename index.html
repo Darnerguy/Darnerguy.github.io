@@ -1,59 +1,109 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <script src="js/pixi.min.js"></script>
-  <h1> OY VEY GOYIM</h1>
-<main>
-  <h2> oyster von BOYSTER</h2>
-  <h3>Where is my boyster</h3>
-  <a href="https://i.redd.it/vef35zz4r8t11.png" target="_blank" rel="noreferrer"><img src="https://darnerguy.github.io/lonk-nose.png" alt= "lonk-nose"></a> <!-- link image to more image-->
-  <h4> oy vey stinky the oyster is gone</h4>
-</main>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="css/style.css">
+        <!-- title tag -->
+        <title>How the Internet Works - Darren Ni</title>
+        <!-- character encoding -->
+        <meta charset="UTF-8">
+        <!-- meta description -->
+        <meta name="description" content="My first web project called How the Internet Works.">
+        <script src="js/pixi.min.js"></script>
+        <script>
+            let app;
 
-<h2>Amazing, absolutely phenomenal</h2>
-<div>
-  <script>
-    let app;
+            window.onload = function() {
+                app = new PIXI.Application({width: 800, height: 600, backgroundColor: 0xAAAAAA});
+                document.body.appendChild(app.view);
+                //player object
+                player = new PIXI.Sprite.from("img/kirby.jpg");
+                player.anchor.set(0.5);
+                player.x = app.view.width / 2;
+                player.y = app.view.height / 2;
 
-    window.onload = function() {
-        app = new PIXI.Application({width: 800, height: 600, backgroundColor: 0xAAAAAA});
-        document.body.appendChild(app.view);
-        //player object
-        player = new PIXI.Sprite.from("img/kirby.jpg");
-        player.anchor.set(0.5);
-        player.x = app.view.width / 2;
-        player.y = app.view.height / 2;
+                app.stage.addChild(player);
 
-        app.stage.addChild(player);
+                //mouse interactions
+                app.stage.interactive = true;
+                app.stage.on("pointermove", movePlayer);
+            }
+            function movePlayer(e) {
+            let pos = e.data.global;
 
-        //mouse interactions
-        app.stage.interactive = true;
-        app.stage.on("pointermove", movePlayer);
-    }
-    function movePlayer(e) {
-    let pos = e.data.global;
+            player.x = pos.x;
+            player.y = pos.y;
+        }
+        </script>
+    </head>
+    <header>
+        <img src="img/internet-image.jpg" alt="Internet image">
+    </header>
+    <body>
+        <!--top nav-->
+        <nav>
+            <ul>
+                <li><a href="#link-layer">Link</a></li>
+                <li><a href="#internet-layer">Internet</a></li>
+                <li><a href="#transport-layer">Transport</a></li>
+                <li><a href="#application-layer">Application</a></li>
+            </ul>
+        </nav>
+    </body>
 
-    player.x = pos.x;
-    player.y = pos.y;
-}
-</script>
-</div>
+    <main>
+        <h1 class="section-title" id="link-layer">Link Layer</h1>
+        <section class="section">
+            <p><img class="left" src="img/link-layer.jpg" alt="Link Layer for Internet">
+                <details>
+                <summary>In computer networking, the <a href="https://en.wikipedia.org/wiki/Link_layer">link layer</a> is the lowest layer in the Internet protocol suite, 
+                the networking architecture of the Internet.</summary> The link layer is the group of methods and communications
+                 protocols confined to the link that a host is physically connected to. The link is the physical and
+                  logical network component used to interconnect hosts or nodes in the network and a link protocol is
+                   a suite of methods and standards that operate only between adjacent network nodes of a network segment.
+                Despite the different semantics of layering in TCP/IP and OSI, the link layer is sometimes described as a 
+                combination of the data link layer (layer 2) and the physical layer (layer 1) in the OSI model. However, the
+                 layers of TCP/IP are descriptions of operating scopes (application, host-to-host, network, link) and not
+                  detailed prescriptions of operating procedures, data semantics, or networking technologies. 
+                  </details>
+            </p>
+        </section>
 
- <video width="320" height="240" controls>
-  <source src="video0.mp4" type="video/mp4">
-  <source src="video0.mp4" type="video/ogg">
-Your browser does not support the video tag.
-</video> 
+        <h1 class="section-title" id="internet-layer">Internet Layer</h1>
+        <section class="section">
+            <p><img class="left" src="img/internet-layer.jpg">
+                The <a href="https://en.wikipedia.org/wiki/Internet_layer">internet layer</a> is a group of internetworking methods, protocols, and specifications in the Internet protocol
+                 suite that are used to transport network packets from the originating host across network boundaries; if necessary,
+                  to the destination host specified by an IP address. The internet layer derives its name from its function facilitating
+                   internetworking, which is the concept of connecting multiple networks with each other through gateways.
+                The internet layer does not include the protocols that fulfill the purpose of maintaining link states between the local
+                 nodes and that usually use protocols that are based on the framing of packets specific to the link types. Such protocols
+                  belong to the link layer. Internet-layer protocols use IP-based packets. 
+            </p>
+        </section>
 
-<p>top 3 long noses</p> <!-- omega bruh -->
-<ol>
-  <li>ronal mcdonal</li>
-  <li>king k rool but in real life</li>
-  <li>wario</li>
-</ol>
-<form>
-  <h3>pleas put e male for latest update in shekel land</h3>
-  <input type="email" placeholder="subscribe to ass wiping newsletter" name="newsletter">
-</form>
+        <h1 class="section-title" id="transport-layer">Transport Layer</h1>
+        <section class="section">
+            <p><img class="left" src="img/transport-layer.png">
+                In computer networking, the <a href="https://en.wikipedia.org/wiki/Transport_layer">transport layer</a> is a conceptual division of methods in the layered architecture of protocols
+                 in the network stack in the Internet protocol suite and the OSI model. The protocols of this layer provide host-to-host
+                  communication services for applications. It provides services such as connection-oriented communication,
+                   reliability, flow control, and multiplexing. 
+            </p>
+        </section>
+
+        <h1 class="section-title" id="application-layer">Application Layer</h1>
+        <section class="section">
+            <p><img class="left" src="img/application-layer.jpg">
+                An <a href="https://en.wikipedia.org/wiki/Application_layer">application layer</a> is an abstraction layer that specifies the shared communications protocols and interface methods
+                 used by hosts in a communications network. The application layer abstraction is used in both of the standard models
+                  of computer networking: the Internet Protocol Suite (TCP/IP) and the OSI model. Although both models use the same
+                   term for their respective highest level layer, the detailed definitions and purposes are different.
+            </p>
+        </section>
+    </main>
+
+
 
 </html>
